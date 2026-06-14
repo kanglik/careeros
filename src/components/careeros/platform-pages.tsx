@@ -2,11 +2,14 @@ import type { ReactNode } from "react";
 import {
   Bot,
   CheckCircle2,
+  ClipboardList,
   Globe2,
   Lightbulb,
   MapPin,
   MessageSquareText,
+  Search,
   TrendingUp,
+  UserPlus,
 } from "lucide-react";
 import Link from "next/link";
 import {
@@ -75,6 +78,50 @@ export function DashboardPage() {
                 <span className="text-lg text-slate-400">{metric.suffix}</span>
               </p>
             </Card>
+          );
+        })}
+      </div>
+
+      <div className="mt-6 grid gap-4 md:grid-cols-4">
+        {[
+          {
+            title: "Register",
+            href: "/register",
+            description: "Create a demo candidate account.",
+            icon: UserPlus,
+          },
+          {
+            title: "Search jobs",
+            href: "/jobs",
+            description: "Browse listings and keyword filters.",
+            icon: Search,
+          },
+          {
+            title: "Applications",
+            href: "/applications",
+            description: "Track applied roles and pipeline status.",
+            icon: ClipboardList,
+          },
+          {
+            title: "Resume builder",
+            href: "/profile",
+            description: "Turn profile signals into resume sections.",
+            icon: CheckCircle2,
+          },
+        ].map((action) => {
+          const Icon = action.icon;
+          return (
+            <Link
+              className="rounded-lg border border-slate-200 bg-white p-4 transition hover:border-blue-200 hover:bg-blue-50"
+              href={action.href}
+              key={action.title}
+            >
+              <Icon className="h-5 w-5 text-blue-700" />
+              <h2 className="mt-3 font-bold text-slate-950">{action.title}</h2>
+              <p className="mt-1 text-sm leading-6 text-slate-600">
+                {action.description}
+              </p>
+            </Link>
           );
         })}
       </div>
@@ -167,9 +214,9 @@ export function ProfilePage() {
   return (
     <div className="px-5 py-8 md:px-8">
       <PageHeader
-        eyebrow="Human Potential Profile"
+        eyebrow="Profile and resume builder"
         title={`${demoProfile.name}'s talent intelligence profile`}
-        description="A richer candidate profile that combines education, projects, languages, interests, aspirations, traits, and growth signals."
+        description="A richer candidate profile and resume-ready preview that combines education, projects, languages, interests, aspirations, traits, and growth signals."
       />
       <div className="grid gap-6 xl:grid-cols-[0.85fr_1.15fr]">
         <Card className="p-6">
@@ -203,6 +250,71 @@ export function ProfilePage() {
             </Card>
           ))}
         </div>
+      </div>
+
+      <div className="mt-6 grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+        <Card className="p-6">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <Badge>Resume builder</Badge>
+              <h2 className="mt-4 text-2xl font-bold">Download-ready resume preview</h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                CareerOS converts the profile into a clear, recruiter-friendly
+                resume structure. In this prototype, the preview is generated
+                from local profile and onboarding signals.
+              </p>
+            </div>
+            <ButtonLink href="/jobs" variant="outline">
+              Match to jobs
+            </ButtonLink>
+          </div>
+
+          <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5">
+            <h3 className="text-xl font-bold text-slate-950">{demoProfile.name}</h3>
+            <p className="mt-1 text-sm font-semibold text-blue-700">
+              {demoProfile.currentRole} | {demoProfile.location}
+            </p>
+            <p className="mt-4 text-sm leading-7 text-slate-700">
+              Multilingual early-career talent with communication, research, and
+              digital marketing experience. Strong transferable fit for product
+              marketing, UX research, customer success, and people analytics roles.
+            </p>
+            <h4 className="mt-5 font-bold">Project highlights</h4>
+            <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
+              {demoProfile.projects.map((project) => (
+                <li className="flex gap-2" key={project}>
+                  <CheckCircle2 className="mt-1 h-4 w-4 text-emerald-500" />
+                  {project}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Card>
+
+        <Card className="p-6">
+          <h2 className="text-xl font-bold">Resume strength</h2>
+          <div className="mt-5 space-y-4">
+            {[
+              ["Profile completeness", 92],
+              ["Keyword match readiness", 84],
+              ["Transferable skill clarity", 88],
+              ["Regional language advantage", 87],
+            ].map(([label, value]) => (
+              <div key={label as string}>
+                <div className="flex justify-between text-sm font-semibold">
+                  <span>{label}</span>
+                  <span>{value}%</span>
+                </div>
+                <div className="mt-2 h-2 rounded-full bg-slate-100">
+                  <div
+                    className="h-2 rounded-full bg-blue-700"
+                    style={{ width: `${value}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </Card>
       </div>
     </div>
   );

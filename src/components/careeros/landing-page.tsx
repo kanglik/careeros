@@ -25,8 +25,8 @@ export function LandingPage() {
         </nav>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <ButtonLink href="/onboarding" variant="outline">
-            Start demo
+          <ButtonLink href="/register" variant="outline">
+            Sign up
           </ButtonLink>
         </div>
       </header>
@@ -45,7 +45,7 @@ export function LandingPage() {
                 careers.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/onboarding" className="h-12">
+                <ButtonLink href="/register" className="h-12">
                   Start Your Career Journey <ArrowRight className="h-4 w-4" />
                 </ButtonLink>
                 <ButtonLink href="/dashboard" variant="outline" className="h-12">

@@ -99,6 +99,59 @@ export type RecruiterCandidate = {
   hiringConfidence: number;
 };
 
+export type WorkMode = "Remote" | "Hybrid" | "On-site";
+
+export type EmploymentType = "Internship" | "Full-time" | "Contract";
+
+export type JobListing = {
+  id: string;
+  title: string;
+  company: string;
+  location: string;
+  workMode: WorkMode;
+  employmentType: EmploymentType;
+  industry: string;
+  salaryRange: string;
+  requiredSkills: string[];
+  preferredLanguages: string[];
+  description: string;
+  matchSignals: string[];
+  postedAt: string;
+};
+
+export type JobSearchFilters = {
+  keyword: string;
+  location: string;
+  workMode: "All" | WorkMode;
+  industry: string;
+};
+
+export type JobApplicationStatus = "Applied" | "Interview" | "Offer";
+
+export type JobApplication = {
+  id: string;
+  jobId: string;
+  jobTitle: string;
+  company: string;
+  status: JobApplicationStatus;
+  appliedAt: string;
+  matchScore: number;
+};
+
+export type ApplicationSummary = {
+  total: number;
+  applied: number;
+  interview: number;
+  offer: number;
+};
+
+export type RegistrationProfile = {
+  name: string;
+  email: string;
+  role: "Student" | "Graduate" | "Professional" | "Recruiter" | "University";
+  createdAt: string;
+};
+
 export type ModuleLink = {
   title: string;
   href: string;

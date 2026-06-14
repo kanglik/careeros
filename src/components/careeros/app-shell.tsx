@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { BriefcaseBusiness, Menu, UserRound } from "lucide-react";
+import { BriefcaseBusiness, ClipboardList, Menu, Search, UserRound } from "lucide-react";
 import { CareerOSBrand } from "./brand";
 import { ThemeToggle } from "./theme-toggle";
 import { moduleLinks } from "@/data/mock-data";
@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 
 const primaryLinks = [
   { title: "Dashboard", href: "/dashboard", icon: BriefcaseBusiness },
+  { title: "Job Listings", href: "/jobs", icon: Search },
+  { title: "Applications", href: "/applications", icon: ClipboardList },
   { title: "Human Potential Profile", href: "/profile", icon: UserRound },
   ...moduleLinks,
 ];

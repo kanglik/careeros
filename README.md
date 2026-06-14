@@ -11,6 +11,10 @@ Tagline: **Discover who you can become.**
 - Landing page with premium enterprise recruitment-tech positioning.
 - Multi-step onboarding with large categorized multi-select chip libraries.
 - Career DNA and Human Potential Profile.
+- Prototype sign up and registration flow.
+- Resume-builder style profile preview.
+- Job listings with keyword search, filters, match scores, and apply actions.
+- Job application tracking with local demo pipeline status.
 - Dashboard with career score, potential score, salary fairness, and progress.
 - Nine product modules:
   - Career Path Navigator
@@ -23,6 +27,15 @@ Tagline: **Discover who you can become.**
   - Passion to Career Engine
   - Career Simulator
 - Recruiter dashboard focused on potential, not resume keyword matching.
+
+## Core Jobsite Routes
+
+- `/register` - sign up and register demo profile.
+- `/jobs` - job listings, keyword search, filters, and matching.
+- `/applications` - application tracking dashboard.
+- `/profile` - profile and resume builder preview.
+- `/dashboard` - candidate dashboard.
+- `/recruiter` - employer dashboard.
 
 ## Tech Stack
 
