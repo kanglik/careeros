@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -12,15 +13,149 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #bfdbfe;
+  color: #0f172a;
+}
+
+.enterprise-grid {
+  background-image:
+    linear-gradient(to right, rgba(37, 99, 235, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.premium-shadow {
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  color-scheme: dark;
+}
+
+.dark body {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.dark .enterprise-grid {
+  background-image:
+    linear-gradient(to right, rgba(96, 165, 250, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(96, 165, 250, 0.12) 1px, transparent 1px);
+}
+
+.dark .premium-shadow {
+  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.45);
+}
+
+.dark .bg-white {
+  background-color: #111827 !important;
+}
+
+.dark .bg-white\/90 {
+  background-color: rgba(17, 24, 39, 0.92) !important;
+}
+
+.dark .bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: #0f172a !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: #1e293b !important;
+}
+
+.dark .bg-slate-200 {
+  background-color: #334155 !important;
+}
+
+.dark .bg-blue-50,
+.dark .bg-blue-50\/40 {
+  background-color: rgba(30, 64, 175, 0.24) !important;
+}
+
+.dark .bg-blue-100 {
+  background-color: rgba(37, 99, 235, 0.28) !important;
+}
+
+.dark .from-white {
+  --tw-gradient-from: #0f172a var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(15, 23, 42, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops:
+    var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from)
+    var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position)) !important;
+}
+
+.dark .to-blue-50\/40 {
+  --tw-gradient-to: rgba(30, 64, 175, 0.24) var(--tw-gradient-to-position) !important;
+}
+
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-blue-100 {
+  border-color: #334155 !important;
+}
+
+.dark .text-slate-950,
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.dark .text-blue-700 {
+  color: #93c5fd !important;
+}
+
+.dark .text-blue-100 {
+  color: #dbeafe !important;
+}
+
+.dark .text-emerald-500,
+.dark .text-emerald-600 {
+  color: #34d399 !important;
+}
+
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover,
+.dark .hover\:bg-blue-50:hover {
+  background-color: #1e293b !important;
+}
+
+.dark .hover\:text-slate-950:hover,
+.dark .hover\:text-blue-700:hover {
+  color: #f8fafc !important;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #111827;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8;
 }
